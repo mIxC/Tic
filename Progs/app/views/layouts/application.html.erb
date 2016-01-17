@@ -1,0 +1,45 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="header">
+  <div class="container">
+    <%= link_to root_path do %>
+        <img src="http://images.clipartlogo.com/files/images/38/385460/board-game-diagonal-win-tic-tac-toe_f.jpg" width="80" height="80"> X/O
+    <% end %>
+
+    <div class="nav pull-right">
+      <% if current_user %>
+          <ul>
+
+            <li><%= link_to current_user.user_name, profile_path(@params)   %></li>
+            <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+          </ul>
+      <% else %>
+          <ul>
+            <li><%= link_to "Login", 'login' %></a></li>
+            <li><%= link_to "Signup", 'signup' %></a></li>
+          </ul>
+      <% end %>
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+<%= yield %>
+
+</body>
+</html>

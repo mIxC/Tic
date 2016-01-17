@@ -1,0 +1,22 @@
+ <div class="container">
+
+   <h1> Fun with X/O </h1>
+   <input type="hidden" name="room_id" value="<%= @room.id%>"/>
+   <br>
+   <br>
+
+   <ul class="list-group" >
+     <li class="list-group-item"><h4><strong>Game ID:</strong> <%=@room.id%></h4></li>
+     <!--<li class="list-group-item"></li>-->
+     <li class="list-group-item"><h4><strong>First player:</strong> <%=@room.first_user.user_name%></h4></li>
+     <!--<li class="list-group-item"></li>-->
+     <li class="list-group-item"><h4><strong>Second player:</strong> <%=@room.second_user ? @room.second_user.user_name : "Waiting..."  %></h4></li>
+     <!--<li class="list-group-item"></li>-->
+   </ul>
+
+   <div class="xo center-block">
+     <%- [*0..8].each do |index| %>
+         <div class="col-xs-4"><%= @room.symbol_by_position(index) %></div>
+     <% end %>
+   </div>
+ </div>
