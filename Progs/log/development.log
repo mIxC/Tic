@@ -1,0 +1,166 @@
+  [1m[36m (139.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.5ms)[0m  select sqlite_version(*)
+  [1m[36m (129.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.6ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateRooms (20151124080415)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "rooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "image" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151124080415"]]
+  [1m[35m (175.8ms)[0m  commit transaction
+Migrating to CreateUsers (20151124082602)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151124082602"]]
+  [1m[35m (167.3ms)[0m  commit transaction
+Migrating to AddRatingColomns (20151128110102)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  ALTER TABLE "users" ADD "wins" integer
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "users" ADD "loss" integer[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "users" ADD "draw" integer
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151128110102"]]
+  [1m[35m (133.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-04 07:06:57 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 5061ms (Views: 4987.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rooms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-04 07:07:03 +0300
+
+
+Started GET "/assets/rooms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-04 07:07:03 +0300
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-04 07:07:03 +0300
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-04 07:07:03 +0300
+
+
+Started GET "/assets/application.self-30db13f1807208fbe40e4344b7e5edd963347cdfcde2c9ffd92a4b73b7a36fdb.css?body=1" for 127.0.0.1 at 2015-12-04 07:07:03 +0300
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-04 07:07:04 +0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-04 07:07:04 +0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-04 07:07:04 +0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-04 07:07:04 +0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-04 07:07:04 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-04 07:07:04 +0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-04 07:07:04 +0300
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-04 07:07:04 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-04 07:07:16 +0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 312ms (Views: 309.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2015-12-04 07:07:24 +0300
+Processing by UsersController#new as HTML
+  Rendered users/new.erb within layouts/application (78.2ms)
+Completed 200 OK in 408ms (Views: 341.1ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-12-04 07:07:29 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fAS83ZIF4DFgqGDrfwjB9MXmNH5728JbYPht5x3djZDRStIUCBOmwxG3J6FXbEKW4JYJzKpWtcleyw7MIeCC8w==", "user"=>{"user_name"=>"1", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.7ms)[0m  begin transaction
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = '1' LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "users" ("user_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_name", "1"], ["password_digest", "$2a$10$2DNn4uoH9IiSyIA93uFdgOAfs/Sx9dP2DtA2njHCKd683QoAy5.Wq"], ["created_at", "2015-12-04 04:07:29.762251"], ["updated_at", "2015-12-04 04:07:29.762251"]]
+  [1m[36m (160.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 631ms (ActiveRecord: 163.7ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2015-12-04 07:07:29 +0300
+Processing by UsersController#show as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" IS NULL LIMIT 1
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.erb within layouts/application (39.4ms)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 1.5ms)
+
+ActionView::Template::Error (nil can't be coerced into Fixnum):
+    36: 
+    37: <p>
+    38:   <strong>MMR : </strong>
+    39:   <%= current_user.mmr %>
+    40: 
+    41: 
+    42: 
+  app/models/user.rb:15:in `*'
+  app/models/user.rb:15:in `mmr'
+  app/views/users/show.erb:39:in `_app_views_users_show_erb__198822701__630885038'
+
+
+  Rendered /home/odmin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (41.9ms)
+  Rendered /home/odmin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (16.7ms)
+  Rendered /home/odmin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.0ms)
+  Rendered /home/odmin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (149.3ms)
+  Rendered /home/odmin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.6ms)
+  Rendered /home/odmin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.7ms)
+  Rendered /home/odmin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/odmin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/odmin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (99.5ms)
+  Rendered /home/odmin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.2ms)
+  Rendered /home/odmin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.1ms)
+  Rendered /home/odmin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (234.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.6ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddRatingColomns (20151128110102)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.7ms)[0m  CREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "wins" integer, "loss" integer, "draw" integer) 
+  [1m[36m (0.5ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "ausers" ("id","user_name","password_digest","created_at","updated_at","wins","loss","draw") VALUES (1, '1', '$2a$10$2DNn4uoH9IiSyIA93uFdgOAfs/Sx9dP2DtA2njHCKd683QoAy5.Wq', '2015-12-04 04:07:29.762251', '2015-12-04 04:07:29.762251', NULL, NULL, NULL)
+  [1m[36m (1.2ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "wins" integer, "loss" integer) 
+  [1m[36m (0.5ms)[0m  [1mSELECT * FROM "ausers"[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "users" ("id","user_name","password_digest","created_at","updated_at","wins","loss") VALUES (1, '1', '$2a$10$2DNn4uoH9IiSyIA93uFdgOAfs/Sx9dP2DtA2njHCKd683QoAy5.Wq', '2015-12-04 04:07:29.762251', '2015-12-04 04:07:29.762251', NULL, NULL)
+  [1m[36m (0.9ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35m (1.0ms)[0m  CREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "wins" integer, "loss" integer) 
+  [1m[36m (0.6ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "ausers" ("id","user_name","password_digest","created_at","updated_at","wins","loss") VALUES (1, '1', '$2a$10$2DNn4uoH9IiSyIA93uFdgOAfs/Sx9dP2DtA2njHCKd683QoAy5.Wq', '2015-12-04 04:07:29.762251', '2015-12-04 04:07:29.762251', NULL, NULL)
+  [1m[36m (1.3ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "wins" integer) 
+  [1m[36m (0.5ms)[0m  [1mSELECT * FROM "ausers"[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "users" ("id","user_name","password_digest","created_at","updated_at","wins") VALUES (1, '1', '$2a$10$2DNn4uoH9IiSyIA93uFdgOAfs/Sx9dP2DtA2njHCKd683QoAy5.Wq', '2015-12-04 04:07:29.762251', '2015-12-04 04:07:29.762251', NULL)
+  [1m[36m (0.7ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35m (0.8ms)[0m  CREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "wins" integer) 
+  [1m[36m (0.4ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "ausers" ("id","user_name","password_digest","created_at","updated_at","wins") VALUES (1, '1', '$2a$10$2DNn4uoH9IiSyIA93uFdgOAfs/Sx9dP2DtA2njHCKd683QoAy5.Wq', '2015-12-04 04:07:29.762251', '2015-12-04 04:07:29.762251', NULL)
+  [1m[36m (1.0ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mSELECT * FROM "ausers"[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "users" ("id","user_name","password_digest","created_at","updated_at") VALUES (1, '1', '$2a$10$2DNn4uoH9IiSyIA93uFdgOAfs/Sx9dP2DtA2njHCKd683QoAy5.Wq', '2015-12-04 04:07:29.762251', '2015-12-04 04:07:29.762251')
+  [1m[36m (0.7ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.9ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?  [["version", "20151128110102"]]
+  [1m[36m (148.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateUsers (20151124082602)
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36m (2.1ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?  [["version", "20151124082602"]]
+  [1m[36m (143.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateRooms (20151124080415)
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36m (2.2ms)[0m  [1mDROP TABLE "rooms"[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?  [["version", "20151124080415"]]
+  [1m[36m (144.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
